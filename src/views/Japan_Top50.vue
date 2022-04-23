@@ -6,6 +6,7 @@
     </router-link>
   </div>
   <router-view />
+  <svg width = "500" height = "300"></svg>
 </template>
 
 <script>
@@ -15,8 +16,15 @@ export default {
   setup() {
     const kinds = ref(["liveness", "energy", "happy"])
     return {
-      kinds,
+      kinds
     }
   },
+
+  name:"app",
+  data(){
+    return {
+      show:false
+    }
+  }
 }
 </script>

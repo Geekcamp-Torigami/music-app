@@ -1,35 +1,36 @@
 import { createRouter, createWebHistory } from "vue-router"
-import Home from "../views/Home.vue"
-import MemoApp from "@/views/MemoApp.vue"
-import QuizApp from "@/views/QuizApp.vue"
-import PaletteApp from "@/views/PaletteApp.vue"
-import OriginalApp from "@/views/OriginalApp.vue"
+import HOME from "@/views/Home.vue"
+import Japan_top50 from "@/views/Japan_Top50.vue"
+import World_top50 from "@/views/World_Top50.vue"
+import happy from "@/components/happy.vue"
+import energy from "@/components/liveness.vue"
+import liveness from "@/components/energy.vue"
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "HOME",
+    component: HOME,
   },
   {
-    path: "/memo",
-    name: "MemoApp",
-    component: MemoApp,
+    path: "/Japan_top50",
+    name: "Japan_top50",
+    component: Japan_top50,
+    children: [
+      { path: "happy", component: happy },
+      { path: "energy", component: energy },
+      { path: "liveness", component: liveness },
+    ],
   },
   {
-    path: "/quiz",
-    name: "QuizApp",
-    component: QuizApp,
-  },
-  {
-    path: "/palette",
-    name: "PaletteApp",
-    component: PaletteApp,
-  },
-  {
-    path: "/original",
-    name: "OriginalApp",
-    component: OriginalApp,
+    path: "/World_top50",
+    name: "World_top50",
+    component: World_top50,
+    children: [
+      { path: "happy", component: happy },
+      { path: "energy", component: energy },
+      { path: "liveness", component: liveness },
+    ],
   },
 ]
 
